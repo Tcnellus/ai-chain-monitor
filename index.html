@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Chain Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Supply-chain rotation research</p>
+        <h1>AI Chain Monitor</h1>
+      </div>
+      <div class="summary" aria-live="polite">
+        <span id="ticker-count">0</span>
+        <span>tickers tracked</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Chain State</h2>
+            <p>Follow the demand path from cloud capex into physical bottlenecks and ROI proof.</p>
+          </div>
+          <select id="stage-filter" aria-label="Filter by chain stage">
+            <option value="all">All stages</option>
+          </select>
+        </div>
+        <div id="stage-grid" class="stage-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Watchlist</h2>
+            <p>Ranked by research score, with downside triggers kept visible.</p>
+          </div>
+          <div class="controls">
+            <button id="show-step3" type="button">Step 3 only</button>
+            <button id="show-all" type="button">All tickers</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Ticker</th>
+                <th>Stage</th>
+                <th>Signal</th>
+                <th>Score</th>
+                <th>Thesis</th>
+                <th>Downside Trigger</th>
+              </tr>
+            </thead>
+            <tbody id="ticker-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Research Rules</h2>
+        <ol class="rules">
+          <li>Start with hyperscaler capex and capacity commentary.</li>
+          <li>Confirm bottlenecks through backlog, lead times, orders, and margins.</li>
+          <li>Prefer lagging suppliers where estimates are rising faster than the stock.</li>
+          <li>Avoid names where valuation already assumes perfect execution.</li>
+          <li>Re-score after every earnings report or major capex update.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      Research tool only. Not financial advice.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

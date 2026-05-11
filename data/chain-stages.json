@@ -1,0 +1,45 @@
+[
+  {
+    "id": "cloud-capex",
+    "name": "Cloud Capex",
+    "description": "Master demand signal from hyperscalers expanding AI compute capacity.",
+    "currentSignal": "Strong",
+    "cyclePosition": "Lead signal"
+  },
+  {
+    "id": "compute-chips",
+    "name": "Compute Chips",
+    "description": "AI accelerators, custom silicon, and foundry capacity that convert capex into compute.",
+    "currentSignal": "Strong",
+    "cyclePosition": "Priced early"
+  },
+  {
+    "id": "memory-packaging",
+    "name": "Memory & Packaging",
+    "description": "HBM, advanced packaging, assembly, and test capacity required for AI servers.",
+    "currentSignal": "Strong",
+    "cyclePosition": "Current bottleneck"
+  },
+  {
+    "id": "power-cooling-grid",
+    "name": "Power, Cooling & Grid",
+    "description": "Electrical infrastructure, thermal systems, and grid buildout needed to run dense AI data centers.",
+    "currentSignal": "Strong",
+    "cyclePosition": "Physical bottleneck"
+  },
+  {
+    "id": "networking-optics",
+    "name": "Networking & Optics",
+    "description": "Switching, optical transceivers, cables, and high-speed interconnect for larger AI clusters.",
+    "currentSignal": "Strong",
+    "cyclePosition": "Scaling bottleneck"
+  },
+  {
+    "id": "software-roi",
+    "name": "Software ROI",
+    "description": "Workflow automation and AI products that must prove economic value to sustain capex.",
+    "currentSignal": "Mixed",
+    "cyclePosition": "Validation stage"
+  }
+]
+

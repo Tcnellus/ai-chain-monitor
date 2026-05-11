@@ -1,0 +1,219 @@
+[
+  {
+    "symbol": "HUBB",
+    "company": "Hubbell",
+    "stageId": "power-cooling-grid",
+    "stageName": "Power, Cooling & Grid",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "Grid and electrical components supplier tied to utility and data center infrastructure without the same hype level as the hottest cooling names.",
+    "downsideTrigger": "Utility order slowdown, margin pressure, or guidance that implies electrical demand is normalizing.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 4,
+      "downsideRisk": 4
+    }
+  },
+  {
+    "symbol": "AMKR",
+    "company": "Amkor Technology",
+    "stageId": "memory-packaging",
+    "stageName": "Memory & Packaging",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "Outsourced assembly and test exposure to advanced packaging demand as AI chips require more complex integration.",
+    "downsideTrigger": "Weak margins, capex burden, slower advanced packaging ramp, or customer inventory correction.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 5,
+      "valuationDiscipline": 3,
+      "downsideRisk": 3
+    }
+  },
+  {
+    "symbol": "PWR",
+    "company": "Quanta Services",
+    "stageId": "power-cooling-grid",
+    "stageName": "Power, Cooling & Grid",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "Infrastructure contractor for grid, power, and utility construction, benefiting from multi-year data center and electrification spend.",
+    "downsideTrigger": "Execution risk, labor cost pressure, delayed projects, or backlog growth falling below revenue growth.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 5,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 3,
+      "downsideRisk": 3
+    }
+  },
+  {
+    "symbol": "NVT",
+    "company": "nVent Electric",
+    "stageId": "power-cooling-grid",
+    "stageName": "Power, Cooling & Grid",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "Electrical enclosures, protection, and liquid cooling exposure for data center infrastructure.",
+    "downsideTrigger": "Acquisition integration risk, slower data center orders, or valuation compressing after a re-rating.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 3,
+      "downsideRisk": 3
+    }
+  },
+  {
+    "symbol": "COHR",
+    "company": "Coherent",
+    "stageId": "networking-optics",
+    "stageName": "Networking & Optics",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "Optical components and transceiver exposure as large AI clusters require faster data movement.",
+    "downsideTrigger": "Customer concentration, pricing pressure, supply catch-up, or datacom growth below expectations.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 2,
+      "downsideRisk": 2
+    }
+  },
+  {
+    "symbol": "MOD",
+    "company": "Modine Manufacturing",
+    "stageId": "power-cooling-grid",
+    "stageName": "Power, Cooling & Grid",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "Thermal management and data center cooling exposure as rack densities rise.",
+    "downsideTrigger": "Margin pressure from capacity expansion, order lumpiness, or guidance failing to support the rerating.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 2,
+      "downsideRisk": 2
+    }
+  },
+  {
+    "symbol": "CRDO",
+    "company": "Credo Technology",
+    "stageId": "networking-optics",
+    "stageName": "Networking & Optics",
+    "strategyStep": 3,
+    "signal": "Strong",
+    "thesis": "High-speed connectivity and active electrical cable exposure to AI cluster networking.",
+    "downsideTrigger": "Very high expectations, customer concentration, or any sign of AI connectivity order digestion.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 1,
+      "downsideRisk": 2
+    }
+  },
+  {
+    "symbol": "MSFT",
+    "company": "Microsoft",
+    "stageId": "cloud-capex",
+    "stageName": "Cloud Capex",
+    "strategyStep": 1,
+    "signal": "Strong",
+    "thesis": "Azure and AI infrastructure capex are master demand signals for the rest of the chain.",
+    "downsideTrigger": "Capex slowdown, weaker Azure growth, or AI monetization failing to justify investment.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 3,
+      "valuationDiscipline": 3,
+      "downsideRisk": 4
+    }
+  },
+  {
+    "symbol": "NVDA",
+    "company": "Nvidia",
+    "stageId": "compute-chips",
+    "stageName": "Compute Chips",
+    "strategyStep": 2,
+    "signal": "Strong",
+    "thesis": "Dominant AI accelerator platform and the first obvious beneficiary of AI capex.",
+    "downsideTrigger": "Gross margin peak, export restrictions, customer digestion, or competition from custom silicon.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 5,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 2,
+      "downsideRisk": 2
+    }
+  },
+  {
+    "symbol": "MU",
+    "company": "Micron",
+    "stageId": "memory-packaging",
+    "stageName": "Memory & Packaging",
+    "strategyStep": 2,
+    "signal": "Strong",
+    "thesis": "HBM and DRAM supplier benefiting from AI memory scarcity.",
+    "downsideTrigger": "Memory pricing rollover, HBM share loss, or capex-driven oversupply risk.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 5,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 3,
+      "downsideRisk": 2
+    }
+  },
+  {
+    "symbol": "ANET",
+    "company": "Arista Networks",
+    "stageId": "networking-optics",
+    "stageName": "Networking & Optics",
+    "strategyStep": 2,
+    "signal": "Strong",
+    "thesis": "Data center Ethernet switching supplier for AI cluster networking.",
+    "downsideTrigger": "Cloud titan digestion, margin normalization, or AI Ethernet share disappointment.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 5,
+      "backlogOrders": 4,
+      "estimateRevisionPotential": 4,
+      "valuationDiscipline": 2,
+      "downsideRisk": 3
+    }
+  },
+  {
+    "symbol": "ZI",
+    "company": "ZoomInfo",
+    "stageId": "software-roi",
+    "stageName": "Software ROI",
+    "strategyStep": 5,
+    "signal": "Neutral",
+    "thesis": "GTM data and AI sales intelligence are part of the software ROI proof stage, but execution must show durable growth.",
+    "downsideTrigger": "Weak retention, slower enterprise demand, or AI features failing to improve sales productivity.",
+    "nextReview": "After next earnings report",
+    "scores": {
+      "demandSignal": 3,
+      "backlogOrders": 2,
+      "estimateRevisionPotential": 3,
+      "valuationDiscipline": 4,
+      "downsideRisk": 2
+    }
+  }
+]
+
