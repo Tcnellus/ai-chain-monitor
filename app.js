@@ -32,6 +32,7 @@ const signalDefaults = {
 const tickerDefaults = {
   proof: 0,
   entry: 0,
+  entryQuality: undefined,
   note: '',
   updatedAt: '',
 };
@@ -66,7 +67,13 @@ const stageSignalScore = (stageId) => {
 
 const tickerSignalScore = (symbol) => {
   const signal = mergedTickerSignal(symbol);
-  return average([Number(signal.proof), Number(signal.entry)]);
+  const entryQuality = signal.entryQuality ?? signal.entry;
+  return average([Number(signal.proof), Number(entryQuality)]);
+};
+
+const tickerEntryQuality = (symbol) => {
+  const signal = mergedTickerSignal(symbol);
+  return Number(signal.entryQuality ?? signal.entry);
 };
 
 const adjustedTickerScore = (ticker) => {
@@ -212,6 +219,7 @@ const renderTickerRows = () => {
           state.defaultSignals.tickers[ticker.symbol],
           state.signals.tickers[ticker.symbol],
         ),
+        entryQuality: tickerEntryQuality(ticker.symbol),
         manualDelta: stageScore * 0.45 + tickerScore * 0.35,
       };
     })
@@ -222,6 +230,9 @@ const renderTickerRows = () => {
   rows.innerHTML = filtered.map((ticker, index) => {
     const note = ticker.tickerSignal?.note
       ? `<div class="ticker-note">${escapeHtml(ticker.tickerSignal.note)}</div>`
+      : '';
+    const pullbackFlag = ticker.score >= 3.8 && ticker.entryQuality <= -1
+      ? '<div class="watch-flag">Watch on pullback</div>'
       : '';
 
     return `
@@ -235,7 +246,7 @@ const renderTickerRows = () => {
           <div class="score-delta">${formatSigned(ticker.manualDelta)} signal</div>
         </td>
         <td><span class="signal ${ticker.stageOutcome.className}">${ticker.stageOutcome.label}</span></td>
-        <td>${escapeHtml(ticker.thesis)}${note}<div class="score-delta">${ticker.tickerSignalSource}</div></td>
+        <td>${escapeHtml(ticker.thesis)}${note}${pullbackFlag}<div class="score-delta">${ticker.tickerSignalSource}</div></td>
         <td>${escapeHtml(ticker.downsideTrigger)}</td>
       </tr>
     `;
@@ -259,7 +270,7 @@ const populateTickerForm = () => {
   const signal = mergedTickerSignal(symbol);
 
   document.querySelector('#ticker-proof').value = signal.proof;
-  document.querySelector('#ticker-entry').value = signal.entry;
+  document.querySelector('#ticker-entry').value = signal.entryQuality ?? signal.entry;
   document.querySelector('#ticker-note').value = signal.note;
 };
 

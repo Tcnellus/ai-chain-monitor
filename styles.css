@@ -185,6 +185,17 @@ button.active {
   font-size: 13px;
 }
 
+.watch-flag {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #fff7ed;
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .stage-meta {
   display: flex;
   justify-content: space-between;

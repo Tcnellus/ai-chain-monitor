@@ -143,3 +143,13 @@ Ticker-level confirmation signals:
 - Entry quality: whether the current setup looks attractive, reasonable, crowded, or chase-risky
 
 The adjusted ticker score combines the baseline research score with the manual stage signal and ticker signal. This is meant to prioritize research, not generate buy or sell instructions.
+
+Entry quality uses the same `-2` to `+2` scale:
+
+- `+2`: estimates rising while the stock lags; asymmetric setup
+- `+1`: fair entry; not stretched
+- `0`: neutral; wait for clearer signal
+- `-1`: stock has moved; margin of safety is thin
+- `-2`: priced for perfect execution; avoid chasing
+
+In `data/signals.json`, the ticker field is named `entry`. The app also accepts `entryQuality` as an alias so future AI updates can use either name. If a ticker has positive thesis confirmation but entry quality is `-1` or `-2`, treat it as `Watch on pullback`, not a clean current entry.
