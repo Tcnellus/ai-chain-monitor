@@ -298,9 +298,20 @@ document.querySelector('#reset-signals').addEventListener('click', () => {
 });
 
 loadData().catch((error) => {
+  const message = window.location.protocol === 'file:'
+    ? 'Dashboard data cannot load from a direct file open. Run node server.js and open http://localhost:8080.'
+    : `Unable to load dashboard data: ${escapeHtml(error.message)}`;
+
+  document.querySelector('#stage-grid').innerHTML = `
+    <article class="stage-card error-card">
+      <h3>Data did not load</h3>
+      <p>${message}</p>
+    </article>
+  `;
+
   document.querySelector('#ticker-table').innerHTML = `
     <tr>
-      <td colspan="8">Unable to load dashboard data: ${escapeHtml(error.message)}</td>
+      <td colspan="8">${message}</td>
     </tr>
   `;
 });

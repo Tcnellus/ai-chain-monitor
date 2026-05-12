@@ -147,6 +147,11 @@ button.active {
   background: #fbfcfe;
 }
 
+.error-card {
+  border-color: #fecdca;
+  background: #fff5f5;
+}
+
 .stage-card h3 {
   margin: 0 0 8px;
   font-size: 16px;
