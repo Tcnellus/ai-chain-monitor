@@ -16,6 +16,14 @@ The project is built to support a lead-lag investment workflow:
 
 This first version is a static site with no build step.
 
+On Windows, double-click:
+
+```text
+start-dashboard.bat
+```
+
+Or run it manually:
+
 ```powershell
 cd ai-chain-monitor
 node server.js
