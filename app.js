@@ -10,6 +10,8 @@ const state = {
     tickers: {},
     updatedAt: '',
     method: '',
+    focusStageId: '',
+    focusTickerSymbols: [],
   },
   signals: {
     stages: {},
@@ -148,10 +150,13 @@ const renderStages = () => {
     const signal = mergedStageSignal(stage.id);
     const source = signalSource(state.defaultSignals.stages[stage.id], state.signals.stages[stage.id]);
     const note = signal?.note ? `<p class="stage-note">${escapeHtml(signal.note)}</p>` : '';
+    const focus = state.defaultSignals.focusStageId === stage.id
+      ? '<span class="focus-badge">Current focus</span>'
+      : '';
 
     return `
       <article class="stage-card">
-        <h3>${escapeHtml(stage.name)}</h3>
+        <h3>${escapeHtml(stage.name)} ${focus}</h3>
         <p>${escapeHtml(stage.description)}</p>
         ${note}
         <div class="stage-meta">
@@ -175,6 +180,16 @@ const renderSelectors = () => {
   tickerSelect.innerHTML = state.tickers.map((ticker) => `
     <option value="${ticker.symbol}">${escapeHtml(ticker.symbol)} - ${escapeHtml(ticker.company)}</option>
   `).join('');
+
+  if (state.defaultSignals.focusStageId) {
+    stageSelect.value = state.defaultSignals.focusStageId;
+  }
+
+  if (state.defaultSignals.focusTickerSymbols?.length) {
+    const preferredTicker = state.defaultSignals.focusTickerSymbols
+      .find((symbol) => state.tickers.some((ticker) => ticker.symbol === symbol));
+    if (preferredTicker) tickerSelect.value = preferredTicker;
+  }
 };
 
 const renderTickerRows = () => {

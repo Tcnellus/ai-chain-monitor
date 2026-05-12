@@ -1,6 +1,8 @@
 {
   "updatedAt": "2026-05-11",
   "method": "Manual research defaults updated by Codex. Static research layer; not a live data feed.",
+  "focusStageId": "power-cooling-grid",
+  "focusTickerSymbols": ["HUBB", "AMKR", "PWR", "NVT", "MOD"],
   "stages": {
     "cloud-capex": {
       "demand": 2,
