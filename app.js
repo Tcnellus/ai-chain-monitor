@@ -5,6 +5,12 @@ const state = {
   tickers: [],
   step3Only: false,
   stageFilter: 'all',
+  defaultSignals: {
+    stages: {},
+    tickers: {},
+    updatedAt: '',
+    method: '',
+  },
   signals: {
     stages: {},
     tickers: {},
@@ -46,7 +52,7 @@ const scoreTickerBase = (ticker) => average([
 ]);
 
 const stageSignalScore = (stageId) => {
-  const signal = { ...signalDefaults, ...(state.signals.stages[stageId] || {}) };
+  const signal = mergedStageSignal(stageId);
   return average([
     Number(signal.demand),
     Number(signal.orders),
@@ -57,7 +63,7 @@ const stageSignalScore = (stageId) => {
 };
 
 const tickerSignalScore = (symbol) => {
-  const signal = { ...tickerDefaults, ...(state.signals.tickers[symbol] || {}) };
+  const signal = mergedTickerSignal(symbol);
   return average([Number(signal.proof), Number(signal.entry)]);
 };
 
@@ -101,6 +107,24 @@ const loadSignals = () => {
   }
 };
 
+const mergedStageSignal = (stageId) => ({
+  ...signalDefaults,
+  ...(state.defaultSignals.stages[stageId] || {}),
+  ...(state.signals.stages[stageId] || {}),
+});
+
+const mergedTickerSignal = (symbol) => ({
+  ...tickerDefaults,
+  ...(state.defaultSignals.tickers[symbol] || {}),
+  ...(state.signals.tickers[symbol] || {}),
+});
+
+const signalSource = (defaultSignal, manualSignal) => {
+  if (manualSignal) return 'Manual override';
+  if (defaultSignal) return 'Research default';
+  return 'No signal';
+};
+
 const renderStages = () => {
   const stageGrid = document.querySelector('#stage-grid');
   const stageFilter = document.querySelector('#stage-filter');
@@ -121,7 +145,8 @@ const renderStages = () => {
   stageGrid.innerHTML = visibleStages.map((stage) => {
     const score = stageSignalScore(stage.id);
     const outcome = stageOutcome(score);
-    const signal = state.signals.stages[stage.id];
+    const signal = mergedStageSignal(stage.id);
+    const source = signalSource(state.defaultSignals.stages[stage.id], state.signals.stages[stage.id]);
     const note = signal?.note ? `<p class="stage-note">${escapeHtml(signal.note)}</p>` : '';
 
     return `
@@ -133,7 +158,7 @@ const renderStages = () => {
           <span class="signal ${outcome.className}">${outcome.label}</span>
           <span>${escapeHtml(stage.cyclePosition)}</span>
         </div>
-        <div class="stage-score">Manual signal: ${formatSigned(score)}</div>
+        <div class="stage-score">${source}: ${formatSigned(score)}</div>
       </article>
     `;
   }).join('');
@@ -167,7 +192,11 @@ const renderTickerRows = () => {
         ...ticker,
         score,
         stageOutcome: stageOutcome(stageScore),
-        tickerSignal: state.signals.tickers[ticker.symbol],
+        tickerSignal: mergedTickerSignal(ticker.symbol),
+        tickerSignalSource: signalSource(
+          state.defaultSignals.tickers[ticker.symbol],
+          state.signals.tickers[ticker.symbol],
+        ),
         manualDelta: stageScore * 0.45 + tickerScore * 0.35,
       };
     })
@@ -188,10 +217,10 @@ const renderTickerRows = () => {
         <td><span class="signal ${ticker.signal.toLowerCase()}">${escapeHtml(ticker.signal)}</span></td>
         <td>
           <span class="score">${formatScore(ticker.score)}</span>
-          <div class="score-delta">${formatSigned(ticker.manualDelta)} manual</div>
+          <div class="score-delta">${formatSigned(ticker.manualDelta)} signal</div>
         </td>
         <td><span class="signal ${ticker.stageOutcome.className}">${ticker.stageOutcome.label}</span></td>
-        <td>${escapeHtml(ticker.thesis)}${note}</td>
+        <td>${escapeHtml(ticker.thesis)}${note}<div class="score-delta">${ticker.tickerSignalSource}</div></td>
         <td>${escapeHtml(ticker.downsideTrigger)}</td>
       </tr>
     `;
@@ -200,7 +229,7 @@ const renderTickerRows = () => {
 
 const populateStageForm = () => {
   const stageId = document.querySelector('#signal-stage').value;
-  const signal = { ...signalDefaults, ...(state.signals.stages[stageId] || {}) };
+  const signal = mergedStageSignal(stageId);
 
   document.querySelector('#signal-demand').value = signal.demand;
   document.querySelector('#signal-orders').value = signal.orders;
@@ -212,7 +241,7 @@ const populateStageForm = () => {
 
 const populateTickerForm = () => {
   const symbol = document.querySelector('#signal-ticker').value;
-  const signal = { ...tickerDefaults, ...(state.signals.tickers[symbol] || {}) };
+  const signal = mergedTickerSignal(symbol);
 
   document.querySelector('#ticker-proof').value = signal.proof;
   document.querySelector('#ticker-entry').value = signal.entry;
@@ -228,13 +257,15 @@ const render = () => {
 
 const loadData = async () => {
   loadSignals();
-  const [stagesResponse, tickersResponse] = await Promise.all([
+  const [stagesResponse, tickersResponse, signalsResponse] = await Promise.all([
     fetch('data/chain-stages.json'),
     fetch('data/tickers.json'),
+    fetch('data/signals.json'),
   ]);
 
   state.stages = await stagesResponse.json();
   state.tickers = await tickersResponse.json();
+  state.defaultSignals = await signalsResponse.json();
   renderSelectors();
   populateStageForm();
   populateTickerForm();

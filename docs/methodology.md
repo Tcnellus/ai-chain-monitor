@@ -105,9 +105,13 @@ The dashboard averages five scores:
 
 For downside risk, a higher score means cleaner risk/reward. A lower score means greater downside risk.
 
-## Manual Confirmation Signals
+## Confirmation Signals
 
-The dashboard also lets the user enter fresh evidence manually after news, earnings, or guidance updates. These inputs are stored in the browser with `localStorage`; they are not pushed to GitHub unless they are later copied into the project data files or notes.
+The dashboard uses two signal layers.
+
+Research defaults live in `data/signals.json`. These are updated when the research context changes, such as after earnings, capex guidance, or major backlog/order commentary.
+
+Manual overrides are entered in the browser and stored with `localStorage`. They are useful for scenario testing or recording the user's own judgment. They are not pushed to GitHub unless they are later copied into the project data files or notes.
 
 Stage-level confirmation signals:
 

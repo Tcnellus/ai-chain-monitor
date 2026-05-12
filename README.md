@@ -76,7 +76,7 @@ Representative watch areas:
 3. Adjust scores when backlog, guidance, valuation, or downside risk changes.
 4. Review rankings on the dashboard.
 
-The dashboard also supports manual confirmation signals. Use the Confirmation Signals panel to score fresh evidence for a stage or individual ticker. These manual entries are saved in your browser, so they are useful for quick review without changing repository files.
+The dashboard also supports confirmation signals. Research defaults live in `data/signals.json`; browser entries override those defaults locally for scenario testing without changing repository files.
 
 ## Scoring Model
 
