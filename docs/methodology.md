@@ -105,3 +105,37 @@ The dashboard averages five scores:
 
 For downside risk, a higher score means cleaner risk/reward. A lower score means greater downside risk.
 
+## Manual Confirmation Signals
+
+The dashboard also lets the user enter fresh evidence manually after news, earnings, or guidance updates. These inputs are stored in the browser with `localStorage`; they are not pushed to GitHub unless they are later copied into the project data files or notes.
+
+Stage-level confirmation signals:
+
+- Demand / capex
+- Orders / backlog
+- Margins / pricing
+- Guidance / revisions
+- Valuation risk
+
+Each field ranges from `-2` to `+2`.
+
+- `+2`: strong positive confirmation
+- `+1`: mild positive confirmation
+- `0`: unchanged or unclear
+- `-1`: mild weakness
+- `-2`: clear weakness
+
+Stage outcomes:
+
+- `Early/accelerating`: strong positive average signal
+- `Confirmed`: positive signal
+- `Watch`: neutral signal
+- `Weakening`: negative signal
+- `Declining`: strong negative signal
+
+Ticker-level confirmation signals:
+
+- Company proof: whether the company-specific update confirms the thesis
+- Entry quality: whether the current setup looks attractive, reasonable, crowded, or chase-risky
+
+The adjusted ticker score combines the baseline research score with the manual stage signal and ticker signal. This is meant to prioritize research, not generate buy or sell instructions.

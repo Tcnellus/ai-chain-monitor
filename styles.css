@@ -94,7 +94,8 @@ main {
 }
 
 select,
-button {
+button,
+textarea {
   min-height: 40px;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -106,6 +107,12 @@ button {
 select {
   min-width: 180px;
   padding: 0 12px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  resize: vertical;
 }
 
 button {
@@ -151,6 +158,16 @@ button.active {
   font-size: 14px;
 }
 
+.stage-card .stage-note,
+.ticker-note {
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 3px solid var(--blue);
+  background: #eef3ff;
+  color: var(--ink);
+  font-size: 13px;
+}
+
 .stage-meta {
   display: flex;
   justify-content: space-between;
@@ -160,6 +177,54 @@ button.active {
   font-weight: 700;
 }
 
+.stage-score,
+.score-delta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.signal-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.signal-form {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfe;
+}
+
+.signal-form h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.signal-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.signal-form label select,
+.signal-form label textarea {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.signal-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
 .table-wrap {
   overflow-x: auto;
 }
@@ -167,7 +232,7 @@ button.active {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 920px;
+  min-width: 1040px;
 }
 
 th,
@@ -245,5 +310,8 @@ footer {
   .controls {
     flex-wrap: wrap;
   }
-}
 
+  .signal-layout {
+    grid-template-columns: 1fr;
+  }
+}

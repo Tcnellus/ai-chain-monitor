@@ -35,6 +35,118 @@
       <section class="panel">
         <div class="panel-heading">
           <div>
+            <h2>Confirmation Signals</h2>
+            <p>Enter fresh evidence after news, earnings, or guidance updates. Scores are saved in this browser.</p>
+          </div>
+          <button id="reset-signals" type="button">Reset signals</button>
+        </div>
+
+        <div class="signal-layout">
+          <form id="stage-signal-form" class="signal-form">
+            <h3>Stage evidence</h3>
+            <label>
+              Stage
+              <select id="signal-stage"></select>
+            </label>
+            <div class="signal-fields">
+              <label>
+                Demand / capex
+                <select id="signal-demand">
+                  <option value="2">Stronger</option>
+                  <option value="1">Slightly stronger</option>
+                  <option value="0" selected>Unchanged</option>
+                  <option value="-1">Slightly weaker</option>
+                  <option value="-2">Weaker</option>
+                </select>
+              </label>
+              <label>
+                Orders / backlog
+                <select id="signal-orders">
+                  <option value="2">Accelerating</option>
+                  <option value="1">Improving</option>
+                  <option value="0" selected>Stable</option>
+                  <option value="-1">Slowing</option>
+                  <option value="-2">Contracting</option>
+                </select>
+              </label>
+              <label>
+                Margins / pricing
+                <select id="signal-margins">
+                  <option value="2">Expanding</option>
+                  <option value="1">Holding better</option>
+                  <option value="0" selected>Stable</option>
+                  <option value="-1">Pressured</option>
+                  <option value="-2">Compressing</option>
+                </select>
+              </label>
+              <label>
+                Guidance / revisions
+                <select id="signal-guidance">
+                  <option value="2">Raised</option>
+                  <option value="1">Positive revision</option>
+                  <option value="0" selected>Maintained</option>
+                  <option value="-1">Softened</option>
+                  <option value="-2">Cut</option>
+                </select>
+              </label>
+              <label>
+                Valuation risk
+                <select id="signal-valuation">
+                  <option value="2">Still reasonable</option>
+                  <option value="1">Acceptable</option>
+                  <option value="0" selected>Fair</option>
+                  <option value="-1">Stretched</option>
+                  <option value="-2">Priced for perfection</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Note
+              <textarea id="signal-note" rows="3" placeholder="Example: Q2 backlog accelerated while valuation stayed reasonable."></textarea>
+            </label>
+            <button type="submit">Save stage signal</button>
+          </form>
+
+          <form id="ticker-signal-form" class="signal-form">
+            <h3>Ticker evidence</h3>
+            <label>
+              Ticker
+              <select id="signal-ticker"></select>
+            </label>
+            <div class="signal-fields">
+              <label>
+                Company proof
+                <select id="ticker-proof">
+                  <option value="2">Confirmed strongly</option>
+                  <option value="1">Confirmed</option>
+                  <option value="0" selected>Neutral</option>
+                  <option value="-1">Questionable</option>
+                  <option value="-2">Broken</option>
+                </select>
+              </label>
+              <label>
+                Entry quality
+                <select id="ticker-entry">
+                  <option value="2">Attractive</option>
+                  <option value="1">Reasonable</option>
+                  <option value="0" selected>Wait</option>
+                  <option value="-1">Crowded</option>
+                  <option value="-2">Avoid chase</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Note
+              <textarea id="ticker-note" rows="3" placeholder="Example: Orders beat, but stock moved faster than estimates."></textarea>
+            </label>
+            <button type="submit">Save ticker signal</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
             <h2>Watchlist</h2>
             <p>Ranked by research score, with downside triggers kept visible.</p>
           </div>
@@ -53,6 +165,7 @@
                 <th>Stage</th>
                 <th>Signal</th>
                 <th>Score</th>
+                <th>Cycle</th>
                 <th>Thesis</th>
                 <th>Downside Trigger</th>
               </tr>
@@ -81,4 +194,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-
