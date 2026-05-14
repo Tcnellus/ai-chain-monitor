@@ -3,6 +3,10 @@ const STORAGE_KEY = 'ai-chain-monitor-signals-v1';
 const state = {
   stages: [],
   tickers: [],
+  tickerChanges: {
+    updatedAt: '',
+    changes: [],
+  },
   step3Only: false,
   stageFilter: 'all',
   defaultSignals: {
@@ -76,6 +80,11 @@ const tickerEntryQuality = (symbol) => {
   return Number(signal.entryQuality ?? signal.entry);
 };
 
+const tickerProofScore = (symbol) => {
+  const signal = mergedTickerSignal(symbol);
+  return Number(signal.proof);
+};
+
 const adjustedTickerScore = (ticker) => {
   const base = scoreTickerBase(ticker);
   const stageAdjustment = stageSignalScore(ticker.stageId) * 0.45;
@@ -97,6 +106,30 @@ const formatSigned = (score) => {
   if (score > 0) return `+${score.toFixed(1)}`;
   return score.toFixed(1);
 };
+
+const formatSignalScore = (score) => {
+  if (score > 0) return `+${score}`;
+  return String(score);
+};
+
+const signalClass = (score) => {
+  if (score >= 1) return 'positive';
+  if (score === 0) return 'flat';
+  if (score === -1) return 'caution';
+  return 'negative';
+};
+
+const signalPill = (score) => `
+  <span class="signal-pill ${signalClass(score)}">${formatSignalScore(score)}</span>
+`;
+
+const scoreMove = (oldScore, newScore) => `
+  <span class="score-move">
+    ${signalPill(oldScore)}
+    <span class="move-arrow">-&gt;</span>
+    ${signalPill(newScore)}
+  </span>
+`;
 
 const saveSignals = () => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.signals));
@@ -219,6 +252,7 @@ const renderTickerRows = () => {
           state.defaultSignals.tickers[ticker.symbol],
           state.signals.tickers[ticker.symbol],
         ),
+        proofScore: tickerProofScore(ticker.symbol),
         entryQuality: tickerEntryQuality(ticker.symbol),
         manualDelta: stageScore * 0.45 + tickerScore * 0.35,
       };
@@ -234,6 +268,9 @@ const renderTickerRows = () => {
     const pullbackFlag = ticker.score >= 3.8 && ticker.entryQuality <= -1
       ? '<div class="watch-flag">Watch on pullback</div>'
       : '';
+    const entryPullbackBadge = ticker.entryQuality <= -1
+      ? '<div class="watch-flag compact">Watch &mdash; pullback</div>'
+      : '';
 
     return `
       <tr>
@@ -245,12 +282,35 @@ const renderTickerRows = () => {
           <span class="score">${formatScore(ticker.score)}</span>
           <div class="score-delta">${formatSigned(ticker.manualDelta)} signal</div>
         </td>
+        <td>${signalPill(ticker.proofScore)}</td>
+        <td>${signalPill(ticker.entryQuality)}${entryPullbackBadge}</td>
         <td><span class="signal ${ticker.stageOutcome.className}">${ticker.stageOutcome.label}</span></td>
         <td>${escapeHtml(ticker.thesis)}${note}${pullbackFlag}<div class="score-delta">${ticker.tickerSignalSource}</div></td>
         <td>${escapeHtml(ticker.downsideTrigger)}</td>
       </tr>
     `;
   }).join('');
+};
+
+const renderTickerChanges = () => {
+  const rows = document.querySelector('#changes-table');
+  const date = document.querySelector('#changes-date');
+
+  if (!rows || !date) return;
+
+  date.textContent = state.tickerChanges.updatedAt
+    ? `Updated ${state.tickerChanges.updatedAt}`
+    : '';
+
+  rows.innerHTML = (state.tickerChanges.changes || []).map((change) => `
+    <tr>
+      <td><span class="ticker">${escapeHtml(change.ticker)}</span></td>
+      <td>${escapeHtml(change.stage)}</td>
+      <td>${scoreMove(change.proofOld, change.proofNew)}</td>
+      <td>${scoreMove(change.entryOld, change.entryNew)}</td>
+      <td>${escapeHtml(change.note)}</td>
+    </tr>
+  `).join('');
 };
 
 const populateStageForm = () => {
@@ -277,21 +337,24 @@ const populateTickerForm = () => {
 const render = () => {
   renderStages();
   renderTickerRows();
+  renderTickerChanges();
   document.querySelector('#show-step3').classList.toggle('active', state.step3Only);
   document.querySelector('#show-all').classList.toggle('active', !state.step3Only);
 };
 
 const loadData = async () => {
   loadSignals();
-  const [stagesResponse, tickersResponse, signalsResponse] = await Promise.all([
+  const [stagesResponse, tickersResponse, signalsResponse, changesResponse] = await Promise.all([
     fetch('data/chain-stages.json'),
     fetch('data/tickers.json'),
     fetch('data/signals.json'),
+    fetch('data/ticker-changes.json'),
   ]);
 
   state.stages = await stagesResponse.json();
   state.tickers = await tickersResponse.json();
   state.defaultSignals = await signalsResponse.json();
+  state.tickerChanges = await changesResponse.json();
   renderSelectors();
   populateStageForm();
   populateTickerForm();
@@ -368,7 +431,7 @@ loadData().catch((error) => {
 
   document.querySelector('#ticker-table').innerHTML = `
     <tr>
-      <td colspan="8">${message}</td>
+      <td colspan="10">${message}</td>
     </tr>
   `;
 });

@@ -196,6 +196,66 @@ button.active {
   font-weight: 800;
 }
 
+.watch-flag.compact {
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+.signal-pill {
+  display: inline-flex;
+  min-width: 34px;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.signal-pill.positive {
+  background: #e8f7f0;
+  color: var(--green);
+}
+
+.signal-pill.flat {
+  background: #eef1f5;
+  color: var(--muted);
+}
+
+.signal-pill.caution {
+  background: #fff7ed;
+  color: var(--amber);
+}
+
+.signal-pill.negative {
+  background: #fff1f0;
+  color: var(--red);
+}
+
+.score-move {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.move-arrow {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.date-chip {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .stage-meta {
   display: flex;
   justify-content: space-between;
@@ -260,7 +320,7 @@ button.active {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1040px;
+  min-width: 1160px;
 }
 
 th,

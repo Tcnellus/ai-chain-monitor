@@ -1,0 +1,60 @@
+{
+  "updatedAt": "2026-05-14",
+  "source": "notes/thesis-log.md",
+  "changes": [
+    {
+      "ticker": "NVT",
+      "stage": "Power, Cooling & Grid",
+      "proofOld": 1,
+      "proofNew": 2,
+      "entryOld": 0,
+      "entryNew": 1,
+      "note": "Q1 revenue +53% YoY, adjusted EPS +63%, backlog $2.6B, organic orders +40%. Re-rating started but estimates are rising faster than the stock."
+    },
+    {
+      "ticker": "AMKR",
+      "stage": "Memory & Packaging",
+      "proofOld": 1,
+      "proofNew": 2,
+      "entryOld": 1,
+      "entryNew": 1,
+      "note": "Q1 revenue beat, AI packaging portfolio expected to triple in 2026, and $2.5-3B capex plan confirms advanced-packaging bottleneck exposure."
+    },
+    {
+      "ticker": "PWR",
+      "stage": "Power, Cooling & Grid",
+      "proofOld": 2,
+      "proofNew": 2,
+      "entryOld": 0,
+      "entryNew": 0,
+      "note": "Backlog increased to $48.5B and EPS guidance was raised. Quality is recognized, so entry remains neutral."
+    },
+    {
+      "ticker": "MOD",
+      "stage": "Power, Cooling & Grid",
+      "proofOld": 2,
+      "proofNew": 2,
+      "entryOld": -1,
+      "entryNew": -1,
+      "note": "Data Center segment and spin-off path confirm thesis, but execution/event risk keeps it Watch on pullback."
+    },
+    {
+      "ticker": "NVDA",
+      "stage": "Compute Chips",
+      "proofOld": 2,
+      "proofNew": 2,
+      "entryOld": -1,
+      "entryNew": -1,
+      "note": "Blackwell demand and May 20 earnings setup confirm thesis, but valuation and binary event risk keep new entry cautious."
+    },
+    {
+      "ticker": "ANET",
+      "stage": "Networking & Optics",
+      "proofOld": 2,
+      "proofNew": 2,
+      "entryOld": -1,
+      "entryNew": -1,
+      "note": "Raised AI networking target and $5.4B deferred revenue confirm demand; valuation keeps it Watch on pullback."
+    }
+  ]
+}
