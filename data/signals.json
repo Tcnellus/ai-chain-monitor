@@ -1,136 +1,136 @@
 {
-  "updatedAt": "2026-05-11",
+  "updatedAt": "2026-05-14",
   "method": "Manual research defaults updated by Codex. Static research layer; not a live data feed.",
   "focusStageId": "power-cooling-grid",
-  "focusTickerSymbols": ["HUBB", "AMKR", "PWR", "NVT", "MOD"],
+  "focusTickerSymbols": ["HUBB", "MU", "PWR", "AMKR", "NVT"],
   "stages": {
     "cloud-capex": {
       "demand": 2,
-      "orders": 1,
+      "orders": 2,
       "margins": 0,
       "guidance": 2,
       "valuation": -1,
-      "note": "Hyperscaler AI capex remains the master positive signal. Risk is rising scrutiny on ROI and the size of spending.",
-      "updatedAt": "2026-05-11"
+      "note": "Combined 2026 capex now $700-725B: Amazon $200B (AWS +28%, chip biz $20B run rate), MSFT $190B (AI revenue $37B run rate), Alphabet $175-185B (Google Cloud backlog $460B+), Meta $125-145B. ~75% AI-directed (~$450-540B). Trump-Xi summit May 14-15 — AI chip export controls on the negotiating table; trade truce cut tariffs 145%→30%, mild positive for global AI deployment. Demand signal remains the strongest it has been. ROI scrutiny will grow as spend scales.",
+      "updatedAt": "2026-05-14"
     },
     "compute-chips": {
       "demand": 2,
       "orders": 2,
       "margins": 1,
-      "guidance": 1,
+      "guidance": 2,
       "valuation": -2,
-      "note": "AI accelerator demand remains strong, but the obvious winners are priced for high execution.",
-      "updatedAt": "2026-05-11"
+      "note": "NVDA reports May 20 — consensus $78.8B (+73-80% YoY), Goldman Sachs sees $80.5B beat with Q2 guide ~$87.7B. Blackwell sold out through mid-2026; hyperscalers deploying ~1,000 NVL72 racks/week. Vera Rubin sampling confirmed (Feb 2026), on track for later this year. $4.5B H20 charge already absorbed. US-China trade truce: AI chip export controls on Trump-Xi agenda — potential partial relief on H200-class restrictions. Mildly positive for NVDA overhang. Thesis intact; all upside priced in at current levels.",
+      "updatedAt": "2026-05-14"
     },
     "memory-packaging": {
       "demand": 2,
-      "orders": 1,
-      "margins": 1,
-      "guidance": 1,
-      "valuation": 0,
-      "note": "HBM and advanced packaging remain active bottlenecks. Watch for supply expansion and margin normalization.",
-      "updatedAt": "2026-05-11"
+      "orders": 2,
+      "margins": 2,
+      "guidance": 2,
+      "valuation": 1,
+      "note": "Micron HBM4 entering mass production Q2 CY2026; HBM4E in 2027-2028. HBM sold out through 2026. HBM TAM CAGR ~40% through 2028 to ~$100B. Micron $200B capacity expansion plan underway. AMKR Q1 2026: revenue $1.68B, beat expectations; AI packaging portfolio to TRIPLE in 2026; $2.5-3B capex plan; computing +20%+ YoY. Advanced packaging is now a confirmed bottleneck. MU and AMKR are the two clearest US-listed lagging supplier proxies with estimates rising ahead of stock moves.",
+      "updatedAt": "2026-05-14"
     },
     "power-cooling-grid": {
       "demand": 2,
       "orders": 2,
-      "margins": 1,
-      "guidance": 1,
+      "margins": 2,
+      "guidance": 2,
       "valuation": 0,
-      "note": "Physical infrastructure demand is strengthening as AI data centers need power, cooling, and grid equipment.",
-      "updatedAt": "2026-05-11"
+      "note": "NVT Q1 2026: revenue $1.242B (+53% YoY), adj EPS $1.09 (+63%), well above guidance high end. Backlog $2.6B (3x prior year). Organic orders +40%. Raised full-year to 26-28% sales growth, adj EPS $4.45-$4.55. PWR Q1: revenue $7.9B, raised EPS guidance to $13.55-$14.25 (vs analyst avg $13.09), total backlog $48.5B (Electric $40.1B). HUBB: Q1 beat and raised confirmed last cycle. Multi-year physical infrastructure cycle (3-6 years) underpinned by US grid as defense priority. Valuation fair for lagging names; not extreme.",
+      "updatedAt": "2026-05-14"
     },
     "networking-optics": {
       "demand": 2,
-      "orders": 1,
-      "margins": 1,
-      "guidance": 1,
-      "valuation": -1,
-      "note": "Cluster scaling supports networking and optics demand, but several names are crowded after large moves.",
-      "updatedAt": "2026-05-11"
+      "orders": 2,
+      "margins": 2,
+      "guidance": 2,
+      "valuation": -2,
+      "note": "Optics trade volatile: COHR/LITE/AAOI dropped 10-14% May 7 on sector rotation, recovered partially May 12-13 (+4%). COHR still up 112% YTD; AAOI +488%; LITE +180%. Lumentum flagged OCS backlog >$400M and multi-hundred-million CPO order for H1 2027. ANET deferred revenue $5.4B (strong forward indicator). US-China trade truce is a mild tailwind for global AI deployment. Thesis fully confirmed across the stage — but all names remain at extreme valuations. Stage is Watch on pullback; volatility is the entry signal to watch.",
+      "updatedAt": "2026-05-14"
     },
     "software-roi": {
       "demand": 1,
-      "orders": 0,
-      "margins": 0,
+      "orders": 1,
+      "margins": 1,
       "guidance": 0,
-      "valuation": 0,
-      "note": "Software ROI is the validation stage. Strong bookings at workflow leaders help justify AI capex; weak monetization would be an early warning.",
-      "updatedAt": "2026-05-11"
+      "valuation": 1,
+      "note": "SNOW Q1 FY2027 reports May 27 — watch for product revenue reaccel above 29%, RPO (was +42% YoY), AI account growth (9,100+ accounts using AI in Q4). PLTR continues strongest monetization proof (+70% YoY). NOW at ~22x forward P/E (down 40% YTD) is the most interesting beaten-down setup if agentic ROI proof arrives. US-China trade truce could unlock enterprise AI spend in China. CFOs still demanding proof — stage remains in validation.",
+      "updatedAt": "2026-05-14"
     }
   },
   "tickers": {
     "HUBB": {
-      "proof": 1,
+      "proof": 2,
       "entry": 1,
-      "note": "Clean grid/electrical exposure with less AI hype than cooling and optics. Watch utility orders and margins.",
+      "note": "Q1 2026 beat and raised. EPS $3.93 vs $3.87, revenue $1.52B vs $1.5B, +11% net sales organic +8.2%, adj EPS +16% YoY. Raised full-year guidance to 8-11% sales growth, adj EPS $19.30-$19.85. DMC Power acquisition ($825M) adds direct data center power infrastructure exposure. US grid as defense priority is a multi-year policy tailwind. Forward P/E ~26x with ROIC ~18% — fair entry, not stretched.",
       "updatedAt": "2026-05-11"
     },
     "AMKR": {
-      "proof": 1,
+      "proof": 2,
       "entry": 1,
-      "note": "Advanced packaging and test optionality. More upside optionality, but margins and capex discipline matter.",
-      "updatedAt": "2026-05-11"
+      "note": "Q1 2026 beat: revenue $1.68B, EPS $0.33 above consensus. AI advanced packaging portfolio to TRIPLE in 2026. $2.5-3B capex plan signals conviction. Computing +20%+ YoY. Arizona facility ramp H2 2026 is the next catalyst. HBM4 packaging volume and new compute program wins are the proof points to watch. Estimates being revised up materially — lagging supplier pattern is forming. Fair entry; not yet fully re-rated vs the HBM memory names.",
+      "updatedAt": "2026-05-14"
     },
     "PWR": {
       "proof": 2,
       "entry": 0,
-      "note": "Strong backlog and infrastructure exposure, but quality is already recognized by the market.",
-      "updatedAt": "2026-05-11"
+      "note": "Q1 2026: revenue $7.9B, raised full-year EPS guidance to $13.55-$14.25 vs analyst avg $13.09. Total backlog $48.5B (up from $44B last quarter), Electric segment alone $40.1B. Grid and data center power construction is durable and multi-year. US grid as defense priority adds policy catalyst. Quality is recognized — entry is neutral. Backlog growth rate vs revenue growth is the key ratio each quarter.",
+      "updatedAt": "2026-05-14"
     },
     "NVT": {
-      "proof": 1,
-      "entry": 0,
-      "note": "Good electrical protection and liquid cooling exposure. More attractive on pullbacks after re-rating.",
-      "updatedAt": "2026-05-11"
+      "proof": 2,
+      "entry": 1,
+      "note": "Q1 2026 beat: revenue $1.242B (+53% YoY), adj EPS $1.09 (+63%), well above guidance high end. Backlog $2.6B (3x prior year). Organic orders +40% driven by AI data center build-out. Raised full-year to 26-28% sales growth, adj EPS $4.45-$4.55. Forward backlog visibility >8-12 months. Stock up 6.6% on results — re-rating has begun but estimates are rising faster than the stock has moved. Fair entry at current levels.",
+      "updatedAt": "2026-05-14"
     },
     "MOD": {
-      "proof": 1,
+      "proof": 2,
       "entry": -1,
-      "note": "Direct cooling exposure, but capacity expansion and event risk make chasing less attractive.",
-      "updatedAt": "2026-05-11"
+      "note": "Watch on pullback. Pure-play pivot confirmed: Performance Technologies spinning off with Gentherm (RMT deal, expected close Q4 2026). New Data Centers segment created April 2026; Art Laszlo appointed President Data Centers. Data center business: 93% CAGR last 2 years, 50-70% annual growth expected next 2 years. TurboChill 3+MW unveiled for AI data centers. Spin-off close Q4 2026 is the key event — execution uncertainty remains until then. Entry improves materially post-spin-off close.",
+      "updatedAt": "2026-05-14"
     },
     "COHR": {
-      "proof": 1,
-      "entry": -1,
-      "note": "AI datacenter optics demand is real, but expectations are higher after strong price action.",
-      "updatedAt": "2026-05-11"
+      "proof": 2,
+      "entry": -2,
+      "note": "Watch on pullback. Q3 FY2026 record revenue $1.8B. NVDA $2B equity stake + multiyear CPO supply agreement. AI and datacom 75% of revenue. Backlog to 2028. Sector dropped 10% May 7 then recovered 4% May 12-13 — confirms extreme valuation risk and sector volatility. Still up 112% YTD. Thesis fully confirmed but extreme valuation leaves no margin of safety. Define re-entry on 20-30% correction.",
+      "updatedAt": "2026-05-14"
     },
     "CRDO": {
-      "proof": 1,
+      "proof": 2,
       "entry": -2,
-      "note": "High-speed connectivity thesis is strong, but valuation and customer concentration create chase risk.",
+      "note": "Watch on pullback. Revenue +272% YoY to $268M. DustPhotonics acquired for ~$1.3B — silicon photonics roadmap through 3.2T interconnects. Annual revenue target >$1.2B. Meta and CoreWeave orders confirm hyperscaler demand. Market cap ~$34B vs ~$1B annual revenue, trailing P/E ~100x. Acquisition integration risk and customer concentration compound valuation risk. Do not chase.",
       "updatedAt": "2026-05-11"
     },
     "NVDA": {
       "proof": 2,
       "entry": -1,
-      "note": "Still the strongest obvious AI compute winner, but decline risk rises if gross margin peaks or hyperscalers digest capacity.",
-      "updatedAt": "2026-05-11"
+      "note": "Watch on pullback. Reports May 20 — consensus $78.8B, Goldman Sachs sees $80.5B beat with Q2 guide ~$87.7B. Blackwell sold out mid-2026; ~1,000 NVL72 racks/week deploying. Vera Rubin sampling confirmed Feb 2026. $4.5B H20 charge already absorbed. US-China trade truce (May 12) puts AI chip export controls on the agenda — mild positive for export overhang if H200-class restrictions ease. May 20 is still a binary event. Thesis intact; entry requires patience or a post-report pullback.",
+      "updatedAt": "2026-05-14"
     },
     "MU": {
       "proof": 2,
-      "entry": 0,
-      "note": "HBM demand is strong. Watch for memory pricing rollover or future oversupply.",
-      "updatedAt": "2026-05-11"
+      "entry": 1,
+      "note": "Step 3 candidate. HBM4 entering mass production Q2 CY2026; HBM4E to follow in 2027-2028. HBM sold out through 2026. HBM TAM CAGR ~40% through 2028 to ~$100B. $200B capacity expansion plan underway. Estimates rising faster than the stock has moved — the core lagging supplier pattern. Best-positioned US-listed HBM proxy with visible path to multi-year margin expansion. NVDA supplier list inclusion remains an additional re-rating catalyst.",
+      "updatedAt": "2026-05-14"
     },
     "ANET": {
-      "proof": 1,
+      "proof": 2,
       "entry": -1,
-      "note": "AI Ethernet demand is strong, but cloud titan timing and valuation need discipline.",
-      "updatedAt": "2026-05-11"
+      "note": "Watch on pullback. Q1 2026: EPS $0.87 vs $0.79 (+10% beat), revenue $2.71B vs $2.62B. Raised 2026 AI networking target from $2.75B to $3.25B. Deferred revenue $5.4B — strong forward indicator. US-China trade truce mild positive for global AI infrastructure deployment. Thesis fully confirmed. Margin of safety thin at current price — deferred revenue conversion provides the next leg but requires patience.",
+      "updatedAt": "2026-05-14"
     },
     "ZI": {
       "proof": 0,
-      "entry": 0,
-      "note": "Part of software ROI stage, but needs proof of durable AI-driven GTM growth and retention.",
+      "entry": -1,
+      "note": "No material positive AI monetization news. Data enrichment and GTM intelligence business faces structural pressure from AI-native alternatives. Weak retention and slower enterprise demand are the primary risks. Not a current entry. Remains in watchlist only to track whether software ROI proof eventually reaches sales intelligence tools.",
       "updatedAt": "2026-05-11"
     },
     "MSFT": {
       "proof": 2,
       "entry": 0,
-      "note": "Capex and AI platform signal remain strong. Watch whether monetization keeps pace with infrastructure spend.",
-      "updatedAt": "2026-05-11"
+      "note": "Master demand signal. Full-year 2026 capex ~$190B (fiscal Q3 up 84% YoY), AI revenue $37B annual run rate. Azure growth re-accelerating. M365 Copilot monetization building. US-China trade truce may open Azure China opportunities. Remains the clearest confirmation that AI infrastructure spend is sustained. Entry is fair but not asymmetric — Stage 1 signals benefit the downstream chain more than the hyperscaler itself at this price.",
+      "updatedAt": "2026-05-14"
     }
   }
 }
