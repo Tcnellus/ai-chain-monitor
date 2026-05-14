@@ -338,6 +338,12 @@ const render = () => {
   renderStages();
   renderTickerRows();
   renderTickerChanges();
+  const updatedLine = document.querySelector('#research-updated');
+  if (updatedLine) {
+    const signalDate = state.defaultSignals.updatedAt || 'unknown';
+    const changesDate = state.tickerChanges.updatedAt || 'unknown';
+    updatedLine.textContent = `Research updated: ${signalDate} | Ticker changes: ${changesDate}`;
+  }
   document.querySelector('#show-step3').classList.toggle('active', state.step3Only);
   document.querySelector('#show-all').classList.toggle('active', !state.step3Only);
 };
